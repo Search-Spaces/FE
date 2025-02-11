@@ -1,0 +1,84 @@
+.title{
+    font-size: 20px;
+    font-weight: bold;
+    color:rgb(39, 39, 180);
+}
+
+.address{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.cafeDetailContainer{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.imageSlider {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.infoContainer {
+  padding: 20px 0;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.stats {
+  display: flex;
+  gap: 20px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.content {
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.detailItem {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.detailItem strong {
+  color: #333;
+}
+
+.detailItem p, .detailItem a {
+  color: #666;
+}
+
+.detailItem a:hover {
+  color: #000;
+}

@@ -2,17 +2,41 @@ interface Window {
   naver: any;
 }
 
-export declare namespace naver {
-  namespace maps {
-    class Map {
+export namespace naver {
+  export namespace maps {
+    export class Map {
       constructor(element: string | HTMLElement, options?: MapOptions);
       setCenter(location: LatLng): void;
-      setZoom(level: number): void;
+      setZoom(level: number, useEffec?: boolean): void;
       getBounds(): LatLngBounds;
       getCenter(): LatLng;
       getZoom(): number;
     }
 
+    // InfoWindow 클래스 추가
+    export class InfoWindow {
+      constructor(options?: InfoWindowOptions);
+      setContent(content: string | HTMLElement): void;
+      setPosition(position: LatLng): void;
+      open(map: Map, anchor?: LatLng | Marker): void;
+      close(): void;
+      getMap(): Map | null;
+    }
+
+    // InfoWindow 옵션 인터페이스 추가
+    export interface InfoWindowOptions {
+      content?: string | HTMLElement;
+      position?: LatLng;
+      maxWidth?: number;
+      backgroundColor?: string;
+      borderColor?: string;
+      borderWidth?: number;
+      anchorSize?: Size;
+      anchorSkew?: boolean;
+      anchorColor?: string;
+      pixelOffset?: Point;
+      disableAnchor?: boolean;
+    }
     class Marker {
       constructor(options: MarkerOptions);
       setMap(map: Map | null): void;

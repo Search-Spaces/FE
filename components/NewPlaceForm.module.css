@@ -7,16 +7,28 @@
   gap: 10px;
 }
 
+.spaceInfoLabel {
+  font-weight: 600;
+  color: #353535;
+  font-size: 14px;
+  margin: 0;
+  padding: 3px 0;
+}
+
 .spaceInfoInput {
   border: none;
   border-radius: 9px;
   padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
 }
-
-.selectContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.spaceContentInput {
+  border: none;
+  border-radius: 9px;
+  padding: 10px;
+  width: 100%;
+  padding-right: 45px;
+  box-sizing: border-box;
 }
 
 .selectBtn {
@@ -29,9 +41,13 @@
 
 .buttonContainer {
   display: flex;
-  /* flex-direction: column; */
+  gap: 10px;
+  align-items: center;
+}
+
+.buttonContainer > div {
+  display: flex;
   gap: 5px;
-  width: 30%;
 }
 
 .timePickerContainer {
@@ -39,15 +55,6 @@
   flex-direction: column;
   gap: 5px;
 }
-/*TimePicker*/
-/* :global(.react-time-picker) {
-  display: inline-flex;
-  position: relative;
-}
-
-:global(.react-time-picker__wrapper) {
-  border: none;
-} */
 
 .timeSelectorContainer {
   display: flex;
@@ -56,12 +63,25 @@
   font-size: 14px;
   padding: 5px;
 }
-
+.addressContainer {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
 .timeSelectorLabel {
   font-weight: 600;
   color: #555555;
 }
 
+.addressEditBtn{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  width: 50px;
+  
+}
 .addressSearchBtn {
   background-color: transparent;
   border: none;
@@ -83,6 +103,34 @@
   cursor: pointer;
   font-size: 20px;
 }
+.imagePreviewContainer {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;  /* 이미지가 많을 경우 줄바꿈 */
+}
+.imagePreview {
+  position: relative;  /* 삭제 버튼의 기준점 */
+  width: 100px;
+  height: 100px;
+}
+.removeImageBtn {
+  position: absolute;  /* 이미지 위에 겹치도록 배치 */
+  top: 5px;           /* 상단에서 약간 여백 */
+  right: 5px;         /* 우측에서 약간 여백 */
+  background-color: rgba(255, 255, 255, 0.8);  /* 반투명 배경 */
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 50%;  /* 동그란 버튼 */
+  z-index: 1;         /* 이미지 위에 표시 */
+}
+
+.removeImageBtn:hover {
+  background-color: rgba(255, 255, 255, 1);  /* 호버 시 완전 불투명 */
+}
+
 /*토글 넣어보기*/
 /* .timeSection {
     width: 100%;
@@ -123,3 +171,113 @@
 .down {
     transform: rotate(0deg);
 } */
+
+.hiddenInput {
+  display: none;  /* 파일 input 숨김 */
+}
+
+.addImageBtn {
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 2px dashed #777777;
+  border-radius: 9px;
+  cursor: pointer;
+  color: #777777;
+  font-weight: 600;
+}
+
+.addImageBtn:hover {
+  background-color: #f5f5f5;
+}
+
+.descriptionContainer {
+  position: relative;
+  width: 100%;
+}
+
+.characterCount {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #777777;
+  font-size: 12px;
+}
+
+.selectCafeBtn,
+.selectOtherBtn {
+  background-color: transparent;
+  border: 2px solid #777777;
+  border-radius: 9px;
+  cursor: pointer;
+  padding: 3px 5px;
+  margin-right: 5px;
+  transition: all 0.2s ease;
+  height: fit-content;
+}
+
+.selectCafeBtn.selected,
+.selectOtherBtn.selected {
+  background-color: #777777;
+  color: white;
+}
+
+.selectCafeBtn:hover,
+.selectOtherBtn:hover {
+  background-color: #f5f5f5;
+}
+
+.selectCafeBtn.selected:hover,
+.selectOtherBtn.selected:hover {
+  background-color: #666666;
+}
+
+.submitBtn {
+  width: 80%;
+  background-color: #acacac;
+  color: white;
+  border: none;
+  border-radius: 9px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 50px;
+  margin-left: 10%;
+  font-weight: 500;
+}
+.submitBtn:hover {
+  background-color: #c9c9c9;
+}
+
+.holidaySection {
+  margin: 10px 0;
+}
+
+.holidayContainer {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.holidayLabel {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.holidayCheckbox {
+  cursor: pointer;
+}
+
+.contactContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.contactItem {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 50%;
+}

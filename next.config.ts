@@ -6,6 +6,14 @@ const nextConfig: NextConfig = {
   images: {
     domains: ['search.pstatic.net', 'ldb-phinf.pstatic.net'],
   },
+  async rewrites() {
+    return [
+      {
+        source: '/:path*',
+        destination: 'https://searchspaces.store/:path*',
+      },
+    ];
+  },
 };
 
 export default nextConfig;

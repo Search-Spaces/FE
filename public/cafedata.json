@@ -5,8 +5,8 @@
     "content": "Sample Content",
     "address": "서울 금천구 시흥대로73길 67 (시흥동), 엠메디컬타워 1층",
     "type": "RESTAURANT",
-    "latitude": 37.1234,
-    "longitude": 127.1234,
+    "latitude": 37.3595704,
+    "longitude": 127.105399,
     "phoneNumber": "02-1234-5678",
     "businessHours": "목: 10:00-22:00\n금: 10:00-22:00\n토: 10:00-22:00\n일: 10:00-22:00\n월: 정기휴무\n화: 10:00-22:00\n수: 10:00-22:00",
     "holidays": "월",
@@ -21,12 +21,12 @@
   },
   {
     "id": 2,
-    "title": "투썸플레이스 시흥사거리",
+    "title": "투썸플레이스 시흥사거리점",
     "content": "Sample Content",
     "address": "서울 금천구 시흥대로 228 신한은행",
     "type": "RESTAURANT",
-    "latitude": 37.1234,
-    "longitude": 127.1234,
+    "latitude": 37.454399,
+    "longitude": 126.901452,
     "phoneNumber": "0507-1234-5678",
     "businessHours": "목: 10:00-22:00\n금: 10:00-22:00\n토: 10:00-22:00\n일: 10:00-22:00\n월: 정기휴무\n화: 10:00-22:00\n수: 10:00-22:00",
     "holidays": "월",
@@ -37,5 +37,62 @@
     "images": [
       "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA4MjhfNzcg%2FMDAxNzI0ODExNTUxMTY3.oz8nfNv7SBT_xsS2IQi1wPeM1NlZl-OYyb49sFmPoMUg.xJrTXk2HshI4vwVdZZ-JPAOoDg-s8Jf9HTy1ggOtuiwg.JPEG%2F1724811546021.jpg"
     ]
-  }
+  },
+   {
+     "id": 3,
+     "title": "컴포즈커피 시흥사거리점",
+     "content": "Sample Content",
+     "address": "서울 금천구 시흥대로 228 신한은행",
+     "type": "RESTAURANT",
+     "latitude": 37.454544,
+     "longitude": 126.900949,
+     "phoneNumber": "0507-1234-5678",
+     "businessHours": "목: 10:00-22:00\n금: 10:00-22:00\n토: 10:00-22:00\n일: 10:00-22:00\n월: 정기휴무\n화: 10:00-22:00\n수: 10:00-22:00",
+     "holidays": "월",
+     "url": "http://example.com/",
+     "copyright": true,
+     "approval": true,
+     "isOpen": true,
+     "images": [
+       "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA4MjhfNzcg%2FMDAxNzI0ODExNTUxMTY3.oz8nfNv7SBT_xsS2IQi1wPeM1NlZl-OYyb49sFmPoMUg.xJrTXk2HshI4vwVdZZ-JPAOoDg-s8Jf9HTy1ggOtuiwg.JPEG%2F1724811546021.jpg"
+     ]
+   },
+   {
+     "id": 4,
+     "title": "스타벅스 타임스퀘어2F점",
+     "content": "Sample Content",
+     "address": "서울 금천구 시흥대로 228 신한은행",
+     "type": "RESTAURANT",
+     "latitude": 37.517085, 
+     "longitude": 126.904116,
+     "phoneNumber": "0507-1234-5678",
+     "businessHours": "목: 10:00-22:00\n금: 10:00-22:00\n토: 10:00-22:00\n일: 10:00-22:00\n월: 정기휴무\n화: 10:00-22:00\n수: 10:00-22:00",
+     "holidays": "월",
+     "url": "http://example.com/",
+     "copyright": true,
+     "approval": true,
+     "isOpen": true,
+     "images": [
+       "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA4MjhfNzcg%2FMDAxNzI0ODExNTUxMTY3.oz8nfNv7SBT_xsS2IQi1wPeM1NlZl-OYyb49sFmPoMUg.xJrTXk2HshI4vwVdZZ-JPAOoDg-s8Jf9HTy1ggOtuiwg.JPEG%2F1724811546021.jpg"
+     ]
+   },
+    {
+     "id": 5,
+     "title": "스타벅스 영등포역점",
+     "content": "Sample Content",
+     "address": "서울 금천구 시흥대로 228 신한은행",
+     "type": "RESTAURANT",
+     "latitude": 37.517085,
+     "longitude": 126.909126,
+     "phoneNumber": "0507-1234-5678",
+     "businessHours": "목: 10:00-22:00\n금: 10:00-22:00\n토: 10:00-22:00\n일: 10:00-22:00\n월: 정기휴무\n화: 10:00-22:00\n수: 10:00-22:00",
+     "holidays": "월",
+     "url": "http://example.com/",
+     "copyright": true,
+     "approval": true,
+     "isOpen": true,
+     "images": [
+       "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA4MjhfNzcg%2FMDAxNzI0ODExNTUxMTY3.oz8nfNv7SBT_xsS2IQi1wPeM1NlZl-OYyb49sFmPoMUg.xJrTXk2HshI4vwVdZZ-JPAOoDg-s8Jf9HTy1ggOtuiwg.JPEG%2F1724811546021.jpg"
+     ]
+   }
 ]

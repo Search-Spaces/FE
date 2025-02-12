@@ -65,7 +65,7 @@ export default function TimeSelector({
           </option>
         ))}
       </select>
-      <span>마감</span>
+      <span>마감시간</span>
       <select
         className={styles.timeSelect}
         value={closeTime?.format('HH') || '18'}

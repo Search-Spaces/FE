@@ -10,6 +10,7 @@ const nextConfig = {
     ];
   },
   images: {
+    upoptimized: true,
     domains: ['search.pstatic.net', 'ldb-phinf.pstatic.net'],
     remotePatterns: [
       {

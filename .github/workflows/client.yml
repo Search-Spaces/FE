@@ -24,7 +24,7 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm install
       - name: Build
-        run: npm run build
+        run: npm run build && npx next export
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v3
         with:

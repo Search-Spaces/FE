@@ -20,17 +20,6 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       {/* <Component {...pageProps} /> */}
-      <Script
-        src="https://developers.kakao.com/sdk/js/kakao.js"
-        strategy="beforeInteractive"
-      />
-      <Script
-        strategy="beforeInteractive"
-        src={`https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${process.env.NEXT_PUBLIC_NAVER_CLIENT_ID}&submodules=geocoder`}
-        onError={(e) => {
-          console.error('Naver Maps API 로딩 실패:', e);
-        }}
-      ></Script>
       <Layout>
         {!hideNav && <Nav />}
         <main style={{ flex: 1 }}>

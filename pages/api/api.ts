@@ -1,11 +1,20 @@
 import axios from 'axios';
-
+import Cookies from 'js-cookie';
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
 // 기본 axios 인스턴스 생성
 export const api = axios.create({
   baseURL: BASE_URL,
-  withCredentials: true, // credentials 설정만 유지
+  withCredentials: true, // 쿠키 자동 포함
+});
+
+// API 요청 시 access 토큰을 헤더에 추가
+api.interceptors.request.use(config => {
+  const accessToken = Cookies.get('accessToken');
+  if (accessToken) {
+    config.headers.Authorization = accessToken;
+  }
+  return config;
 });
 
 export const apiService = {

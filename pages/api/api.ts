@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = '';
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
 // 기본 axios 인스턴스 생성
 export const api = axios.create({

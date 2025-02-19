@@ -9,7 +9,10 @@ import { useEffect } from 'react';
 export default function App({ Component, pageProps }: AppProps) {
   // console.log('NAVER_CLIENT_ID:', process.env.NEXT_PUBLIC_NAVER_CLIENT_ID);
   const router = useRouter();
-  const hideNav = router.pathname === '/main' || router.pathname === '/login';
+  const hideNav =
+    router.pathname === '/main' ||
+    router.pathname === '/login' ||
+    router.pathname === '/';
 
   // useEffect(() => {
   //   if (router.pathname === '/') {

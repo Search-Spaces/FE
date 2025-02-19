@@ -610,22 +610,8 @@ export default function Map() {
 
   return (
     <div className={styles.container}>
-      <div id="map" ref={mapRef} style={{ width: '100%', height: '100%' }} />
-
-      <div className={styles.sidePanelContainer}>
-        <div
-          className={`${styles.sidePanel} ${!isPanelOpen ? styles.sidePanelClosed : ''}`}
-        >
-          <div className={styles.sidePanelContent}>{renderSidePanel()}</div>
-        </div>
-        <button
-          onClick={handlePanelOpen}
-          className={isPanelOpen ? styles.panelCloseBtn : styles.panelOpenBtn}
-        ></button>
-      </div>
       <div className={styles.mapContainer} style={{ zIndex: 900 }}>
         <div id="map" className={styles.map} ref={mapRef} />
-
         {/* 카페 마커 렌더링 */}
         {mapRef.current &&
           window.naver?.maps &&
@@ -674,6 +660,18 @@ export default function Map() {
             className={styles.currentLocationBtn}
           ></button>
         </div>
+      </div>
+
+      <div className={styles.sidePanelContainer}>
+        <div
+          className={`${styles.sidePanel} ${!isPanelOpen ? styles.sidePanelClosed : ''}`}
+        >
+          <div className={styles.sidePanelContent}>{renderSidePanel()}</div>
+        </div>
+        <button
+          onClick={handlePanelOpen}
+          className={isPanelOpen ? styles.panelCloseBtn : styles.panelOpenBtn}
+        ></button>
       </div>
 
       {/* 우클릭 컨텍스트 메뉴 */}

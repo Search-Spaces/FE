@@ -11,11 +11,11 @@ export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const hideNav = router.pathname === '/main' || router.pathname === '/login';
 
-  useEffect(() => {
-    if (router.pathname === '/') {
-      router.replace('/main');
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (router.pathname === '/') {
+  //     router.replace('/main');
+  //   }
+  // }, []);
 
   return (
     <>

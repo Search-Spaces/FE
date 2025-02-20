@@ -5,7 +5,8 @@ import Image from 'next/image';
 import Cookies from 'js-cookie';
 import { log } from 'console';
 import { getCookie, setCookie, deleteCookie, getCookies } from 'cookies-next';
-import { cookies } from 'next/headers';
+// import { cookies } from 'next/headers';
+// import { cookies } from 'next/headers';
 
 declare global {
   interface Window {
@@ -17,8 +18,8 @@ function Login() {
   const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const cookie = getCookies({cookies});
-  console.log('cookie',cookie);
+  // const cookie = getCookies({cookie});
+  // console.log('cookie',cookie);
   
   const handleLogin = () => {
     console.log(email, password);
@@ -53,6 +54,8 @@ function Login() {
             console.log('카카오 로그인 성공');
             console.log(Cookies.get('accessToken'));
             console.log(token);
+            console.log(authHeader);
+            console.log(response.headers);
             
           }
         

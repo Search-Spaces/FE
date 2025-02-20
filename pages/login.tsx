@@ -4,6 +4,8 @@ import style from './login.module.css';
 import Image from 'next/image';
 import Cookies from 'js-cookie';
 import { log } from 'console';
+import { getCookie, setCookie, deleteCookie, getCookies } from 'cookies-next';
+import { cookies } from 'next/headers';
 
 declare global {
   interface Window {
@@ -15,6 +17,8 @@ function Login() {
   const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const cookie = getCookies({cookies});
+  console.log('cookie',cookie);
   
   const handleLogin = () => {
     console.log(email, password);

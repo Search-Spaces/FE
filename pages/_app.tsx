@@ -2,7 +2,6 @@ import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import Nav from '../components/Navigation';
 import Layout from '../layouts/layout';
-import Script from 'next/script';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 
@@ -14,15 +13,20 @@ export default function App({ Component, pageProps }: AppProps) {
     router.pathname === '/login' ||
     router.pathname === '/';
 
-  // useEffect(() => {
-  //   if (router.pathname === '/') {
-  //     router.replace('/main');
-  //   }
-  // }, []);
+  useEffect(()=> {
+    const handleRouteChange = (url: string)=>{
+      if (url === '/map' && window.location.pathname === '/map'){
+        window.location.reload();
+      }
+    };
+    router.events.on('routeChangeComplete',handleRouteChange);
+    return ()=> {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    }
+  }, [router])
 
   return (
     <>
-      {/* <Component {...pageProps} /> */}
       <Layout>
         {!hideNav && <Nav />}
         <main style={{ flex: 1 }}>

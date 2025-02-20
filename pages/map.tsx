@@ -79,7 +79,7 @@ interface ContextMenu {
   lng: number;
 }
 
-export default function Map() {
+const Map = () => {
   const [userLocation, setUserLocation] = useState<{
     lat: number;
     lng: number;
@@ -728,4 +728,5 @@ export default function Map() {
       />
     </div>
   );
-}
+};
+export default Map;

@@ -33,48 +33,40 @@ function Login() {
     window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/oauth2/authorization/kakao`;
   };
 
-  useEffect(() => {
-    const handleKakaoCallback = async () => {
-      const code = router.query.code as string;
-      if (code) {
-        try {
-          // 1. 카카오 인증 및 토큰 발급 (이때 HttpOnly 쿠키로 토큰이 자동 저장됨)
-          const authResponse = await fetch(
-            `${process.env.NEXT_PUBLIC_API_URL}/oauth2/authorization/kakao?code=${code}`,
-            {
-              method: 'GET',
-              credentials: 'include',
-            },
-          );
+  // useEffect(() => {
+  //   const handleKakaoCallback = async () => {
+  //     const code = router.query.code as string;
+  //     if (code) {
+  //       try {
+  //         // 1. 카카오 인증 및 토큰 발급 (이때 HttpOnly 쿠키로 토큰이 자동 저장됨)
+  //         const authResponse = await fetch(
+  //           `${process.env.NEXT_PUBLIC_API_URL}/oauth2/authorization/kakao?code=${code}`,
+  //           {
+  //             method: 'GET',
+  //             credentials: 'include',
+  //           },
+  //         );
 
-          if (authResponse.ok) {
-            // 2. /map 엔드포인트로 요청 (쿠키가 자동으로 포함됨)
-            const checkAuthResponse = await fetch(
-              `${process.env.NEXT_PUBLIC_API_URL}/map`,
-              {
-                method: 'GET',
-                credentials: 'include',
-              },
-            );
+  //         if (authResponse.ok) {
+  //           // 2. /map 엔드포인트로 요청 (쿠키가 자동으로 포함됨)
+  //           const checkAuthResponse = await fetch(
+  //             `${process.env.NEXT_PUBLIC_API_URL}/map`,
+  //             {
+  //               method: 'GET',
+  //               credentials: 'include',
+  //             },
+  //           );
+  //         }
+  //       } catch (error) {
+  //         console.error('카카오 로그인 콜백 처리 중 에러 발생:', error);
+  //       }
+  //     }
+  //   };
 
-            if (checkAuthResponse.ok) {
-              router.push('/map');
-            } else {
-              console.error('인증 실패');
-              router.push('/login');
-            }
-          }
-        } catch (error) {
-          console.error('카카오 로그인 콜백 처리 중 에러 발생:', error);
-          router.push('/login');
-        }
-      }
-    };
-
-    if (router.isReady && router.query.code) {
-      handleKakaoCallback();
-    }
-  }, [router.isReady, router.query.code]);
+  //   if (router.isReady && router.query.code) {
+  //     handleKakaoCallback();
+  //   }
+  // }, [router.isReady, router.query.code]);
   return (
     <div>
       <div className={style.logoContainer}>

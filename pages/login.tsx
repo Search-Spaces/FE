@@ -43,21 +43,8 @@ function Login() {
             method: 'GET',
             credentials: 'include',
           });
-          const authHeader = response.headers.get('Authorization');
-          const token = authHeader?.substring(7);
-          if (token){
-            Cookies.set('accessToken', token,{
-              expires: 1,
-              secure: true,
-              sameSite: 'strict',
-            })
-            console.log('카카오 로그인 성공');
-            console.log(Cookies.get('accessToken'));
-            console.log(token);
-            console.log(authHeader);
-            console.log(response.headers);
-            
-          }
+         
+          router.push('/map');
         
         }catch(error){
           console.error('카카오 로그인 콜백 처리 중 에러 발생:', error);

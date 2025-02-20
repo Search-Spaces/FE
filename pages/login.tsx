@@ -1,8 +1,8 @@
-//loginpage 컴포넌트
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import style from './login.module.css';
 import Image from 'next/image';
+import Cookies from 'js-cookie';
 
 declare global {
   interface Window {
@@ -31,19 +31,28 @@ function Login() {
   useEffect(()=> {
     const handleKakaoCallback= async()=> {
       const code = router.query.code as string;
-
       if(code){
         try{
           const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/oauth2/authorization/kakao?code=${code}`,{
             method: 'GET',
             credentials: 'include',
           });
+          const authHeader = response.headers.get('Authorization');
+          const token = authHeader?.substring(7);
+          if (token){
+            Cookies.set('accessToken', token,{
+              expires: 1,
+              secure: true,
+              sameSite: 'strict',
+            })
+          }
         
         }catch(error){
           console.error('카카오 로그인 콜백 처리 중 에러 발생:', error);
         }
       }
     };
+    
     if (router.isReady&&router.query.code){
       handleKakaoCallback();
     }

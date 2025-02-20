@@ -2,9 +2,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import style from './login.module.css';
-import { apiService } from '@/pages/api/api';
 import Image from 'next/image';
-import Cookies from 'js-cookie';
 
 declare global {
   interface Window {
@@ -20,9 +18,9 @@ function Login() {
   const handleLogin = () => {
     console.log(email, password);
   };
-  const handleSignup = () => {
-    router.push('/signup');
-  };
+  // const handleSignup = () => {
+  //   router.push('/signup');
+  // };
 
   const handleKakaoLogin = () => {
     console.log('카카오 로그인 시작...');
@@ -32,8 +30,9 @@ function Login() {
 
   useEffect(()=> {
     const handleKakaoCallback= async()=> {
-      if(window.location.href.includes('code=')){
-        const code = new URL(window.location.href).searchParams.get('code');
+      const code = router.query.code as string;
+
+      if(code){
         try{
           const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/oauth2/authorization/kakao?code=${code}`,{
             method: 'GET',
@@ -45,10 +44,10 @@ function Login() {
         }
       }
     };
-    if (router.isReady){
+    if (router.isReady&&router.query.code){
       handleKakaoCallback();
     }
-  },[router.isReady])
+  },[router.isReady,router.query.code])
   return (
     <div>
       <div className={style.logoContainer}>

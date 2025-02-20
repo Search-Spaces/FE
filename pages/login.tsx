@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import style from './login.module.css';
 import Image from 'next/image';
 import Cookies from 'js-cookie';
+import { log } from 'console';
 
 declare global {
   interface Window {
@@ -45,6 +46,10 @@ function Login() {
               secure: true,
               sameSite: 'strict',
             })
+            console.log('카카오 로그인 성공');
+            console.log(Cookies.get('accessToken'));
+            console.log(token);
+            
           }
         
         }catch(error){
@@ -52,7 +57,7 @@ function Login() {
         }
       }
     };
-    
+
     if (router.isReady&&router.query.code){
       handleKakaoCallback();
     }

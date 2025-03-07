@@ -1,4 +1,4 @@
-import styles from './main.module.css';
+/*import styles from './main.module.css';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 const Main = () => {
@@ -42,3 +42,4 @@ const Main = () => {
 };
 
 export default Main;
+*/

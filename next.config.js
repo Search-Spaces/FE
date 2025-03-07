@@ -1,16 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: true,
+  trailingSlash: true,
   output: 'export',
-  async rewrites() {
-    return [
-      {
-        source: '/api/:path*',
-        destination: 'https://searchspaces.store/:path*',
-      },
-    ];
-  },
   images: {
-    unoptimized: true,
     domains: ['search.pstatic.net', 'ldb-phinf.pstatic.net'],
     remotePatterns: [
       {
@@ -24,6 +17,7 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
+    unoptimized: true, // static export를 사용할 때는 이 설정이 필요합니다
   },
 };
 

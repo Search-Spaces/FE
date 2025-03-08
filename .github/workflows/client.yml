@@ -23,14 +23,14 @@ jobs:
       - name: Install Dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm install
-      - name: Build and Export
+      - name: Build
         env:
           NEXT_PUBLIC_NAVER_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_NAVER_CLIENT_ID }}
           NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
         run: |
           echo "NEXT_PUBLIC_NAVER_CLIENT_ID=${{ secrets.NEXT_PUBLIC_NAVER_CLIENT_ID }}" >> .env
           echo "NEXT_PUBLIC_API_URL=${{ secrets.NEXT_PUBLIC_API_URL }}" >> .env
-          npm run build && npx next export 
+          npm run build
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v3
         with:
